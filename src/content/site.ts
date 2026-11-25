@@ -232,27 +232,6 @@ export const projects: Project[] = [
       "A clean watchlist with posters and streaming info, and a lever you pull to get tonight’s pick as a printed ticket.",
     link: { label: "Open the live app", href: "https://tonightspick.vercel.app" },
   },
-  {
-    slug: "tcp-lamp",
-    name: "TCP Lamp",
-    year: "2026",
-    claim: "A redesigned light therapy lamp, taken from research and CMF analysis to a 3D-printed prototype.",
-    role: "Product designer",
-    team: "Technically Complex Product studio",
-    duration: "Semester 4",
-    tools: "Fusion 360, 3D printing, alcohol markers",
-    cover: "/images/covers/tcp-lamp.jpg",
-    problem:
-      "Light therapy lamps are technically dense products. This project started from the Beurer IL11 and asked how its form, materials and internal layout could be redesigned.",
-    process: [
-      { label: "Research", caption: "Secondary research combined into one document." },
-      { label: "Sketches", caption: "Ideation on A3 sheets in alcohol marker." },
-      { label: "CMF", caption: "Colour, material and finish boards for the original and the proposed lamp." },
-      { label: "CAD", caption: "A Fusion 360 model of the final form." },
-      { label: "Prototype", caption: "A 3D print to check how all the components fit inside." },
-    ],
-    solution: "A final form with renders, a CMF proposal and a printed prototype.",
-  },
 ];
 
 // Default process strip, used when a project has no `process` of its own.
@@ -287,6 +266,26 @@ export const stills: string[] = [
   "/images/stills/still-18.jpg",
   "/images/stills/still-19.jpg",
   "/images/stills/still-20.jpg",
+  "/images/stills/still-25.jpg",
+  "/images/stills/still-26.jpg",
+  "/images/stills/still-27.jpg",
+  "/images/stills/still-28.jpg",
+  "/images/stills/still-29.jpg",
+  "/images/stills/still-30.jpg",
+  "/images/stills/still-31.jpg",
+  "/images/stills/still-32.jpg",
+  "/images/stills/still-33.jpg",
+  "/images/stills/still-34.jpg",
+  "/images/stills/still-35.jpg",
+  "/images/stills/still-36.jpg",
+  "/images/stills/still-37.jpg",
+  "/images/stills/still-38.jpg",
+  "/images/stills/still-39.jpg",
+  "/images/stills/still-40.jpg",
+  "/images/stills/still-41.jpg",
+  "/images/stills/still-42.jpg",
+  "/images/stills/still-43.jpg",
+  "/images/stills/still-44.jpg",
 ];
 export const letterforms: { src: string; title: string; year: string; ratio: string }[] = [];
 export const STILL_RATIOS = ["4/5", "1/1", "3/2", "4/5", "3/2", "4/5", "1/1", "3/2", "4/5", "1/1", "4/5", "3/2"];
