@@ -1,22 +1,8 @@
 import Link from "next/link";
 import Ph from "@/components/Ph";
-import NextPage from "@/components/NextPage";
 import { site, projects, stills } from "@/content/site";
 
-const st = (i: number) => ({ "--i": i } as React.CSSProperties);
 const pad = (n: number) => String(n).padStart(2, "0");
-
-function Head({ title, count, size = 22 }: { title: string; count?: string; size?: number }) {
-  return (
-    <div className="head">
-      <h2 className="t" style={{ fontSize: size }}>{title}</h2>
-      <span className="right">
-        {count ? <span className="counter">{count}</span> : null}
-        <span className="arrow" aria-hidden="true">→</span>
-      </span>
-    </div>
-  );
-}
 
 function Statement() {
   const { statement: s, accent: a } = site.hero;
@@ -26,44 +12,50 @@ function Statement() {
 }
 
 export default function Home() {
-  const covers = projects.filter((x) => x.cover).slice(0, 4);
+  const list = projects.filter((x) => x.cover);
   return (
-    <>
-      <div className="bento">
-        <div className="tile t-statement rise" style={st(0)}>
+    <div className="home">
+      <section className="hero2 rise" style={{ "--i": 0 } as React.CSSProperties}>
+        <div className="hero2-text">
           <h1 className="statement"><Statement /></h1>
         </div>
+        <figure className="hero2-photo">
+          {site.hero.photo ? <img src={site.hero.photo} alt={site.name} /> : null}
+          <figcaption>{site.hero.caption}</figcaption>
+        </figure>
+      </section>
 
-        <div className="tile t-photo rise" style={st(1)}>
-          {site.hero.photo ? (
-            <img className="cover" src={site.hero.photo} alt={site.name} />
-          ) : (
-            <span className="photo-ph">[Your photo]</span>
-          )}
-          <span className="photo-caption">{site.hero.caption}</span>
+      <section className="selected">
+        <div className="sel-head">
+          <h2>Selected work</h2>
+          <Link href="/work/" className="sel-all">All work <span className="arrow">→</span></Link>
         </div>
+        <div className="sel-grid">
+          {list.map((p, i) => (
+            <Link key={p.slug} href={`/work/${p.slug}/`} className={`sel-item${i === 0 ? " wide" : ""} rise`} style={{ "--i": i + 1 } as React.CSSProperties}>
+              <div className="sel-stage"><Ph src={p.cover} label="" /></div>
+              <div className="sel-meta">
+                <span className="counter">{pad(i + 1)}</span>
+                <h3 className="t">{p.name}</h3>
+                <span className="sub">{p.role} · {p.year}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-        <Link href="/work/" className="tile pad28 t-work rise" style={st(2)}>
-          <Head title="Work" count={`${pad(projects.length)} projects`} size={30} />
-          <div className="collage">
-            {covers.map((p, i) => (
-              <Ph key={i} src={p?.cover} label="" bg={p?.cover ? undefined : i % 2 ? "var(--g1)" : undefined} />
-            ))}
-          </div>
-          <span className="strong">View all work <span className="arrow">→</span></span>
+      <section className="duo2">
+        <Link href="/about/" className="duo-tile">
+          <span className="counter">About</span>
+          <p>{site.about.short}</p>
+          <span className="strong">More about me <span className="arrow">→</span></span>
         </Link>
-
-        <Link href="/stills/" className="tile t-stills rise" style={st(3)}>
-          <Head title="Stills" count={stills.length ? pad(stills.length) : "[N]"} size={20} />
+        <Link href="/stills/" className="duo-tile stills-tile">
+          <span className="counter">Stills · {pad(stills.length)}</span>
           <div className="thumbs"><Ph src={stills[0]} bg="var(--g1)" /><Ph src={stills[1]} bg="var(--g2)" /></div>
+          <span className="strong">See stills <span className="arrow">→</span></span>
         </Link>
-
-        <Link href="/about/" className="tile t-about rise" style={st(5)}>
-          <Head title="About" size={20} />
-          <p className="about-mini">{site.about.short}</p>
-        </Link>
-      </div>
-      <NextPage href="/about/" title="About" />
-    </>
+      </section>
+    </div>
   );
 }
