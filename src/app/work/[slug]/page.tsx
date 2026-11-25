@@ -37,6 +37,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
     ["Process", "process"],
     p.decisions?.length ? ["Decisions", "decisions"] : null,
     p.solution ? ["Solution", "solution"] : null,
+    p.gallery?.length ? ["Screens", "screens"] : null,
     p.results ? ["Results", "results"] : null,
   ].filter(Boolean) as [string, string][];
   return (
@@ -98,7 +99,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         <Sec id="decisions" title="Key decisions">
           {p.decisions.map((d, n) => (
             <div className={`decision${n % 2 ? " flip" : ""}${d.img ? "" : " noimg"}`} key={d.title}>
-              {d.img ? <Ph src={d.img} label="" ratio="4/3" /> : null}
+              {d.img ? <Ph lb natural src={d.img} label="" title={d.title} /> : null}
               <div className="d">
                 <b>{d.title}</b>
                 <p><span>Why</span>{d.why}</p>
@@ -113,6 +114,21 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           <Txt>{p.solution}</Txt>
           {p.link ? <p className="txt"><a className="strong" href={p.link.href} target="_blank" rel="noopener noreferrer">{p.link.label} <span className="arrow">→</span></a></p> : null}
         </Sec>
+      ) : null}
+      {p.gallery?.length ? (
+        <Reveal>
+          <section id="screens" data-sec className="sec" aria-label="Screens">
+            <div className="sec-head"><h2>Screens</h2><span className="counter">{String(p.gallery.length).padStart(3, "0")} images</span></div>
+            <div className="shots">
+              {p.gallery.map((g, n) => (
+                <figure className={`shot${g.wide ? " wide" : ""}`} key={g.src}>
+                  <Ph lb natural src={g.src} label="" title={g.caption} />
+                  <figcaption><span className="counter">{String(n + 1).padStart(3, "0")}</span><span>{g.caption}</span></figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        </Reveal>
       ) : null}
       {p.results ? <Sec id="results" title="Results"><Txt>{p.results}</Txt></Sec> : null}
       <NextPage href={`/work/${next.slug}/`} title={next.name} />
