@@ -468,3 +468,58 @@ html.lb-lock{overflow:hidden}
   .hero2-photo{max-width:none}
   .side{padding:12px 12px 12px 4px}
 }
+
+/* ===== Preview v7: type scale, galleries, small Lusion-style details ===== */
+body{font-size:18px;line-height:1.55}
+.side-intro{font-size:17px}
+.nav a{font-size:19px}
+.nav a .num{font-size:14px}
+.eyebrow{font-size:15px}
+.meta-grid p:not(.eyebrow){font-size:18px}
+.counter{font-size:13px}
+.stat span{font-size:16px}
+.stat b{font-size:clamp(38px,4vw,56px)}
+.sec h2,.process-head h2,.exp h2{font-size:15px}
+.sec .txt{font-size:clamp(19px,1.5vw,22px);line-height:1.55;max-width:760px}
+.decision .d p{font-size:17px;line-height:1.5}
+.decision .d p span{font-size:13px}
+.decision .d b{font-size:clamp(22px,2vw,28px)}
+.pstep figcaption{font-size:17px}
+.cs-nav button{font-size:15px;height:40px}
+.back{font-size:17px}
+.cs-head h1{font-size:clamp(40px,5.6vw,84px);letter-spacing:-.035em}
+.cs-head p{font-size:clamp(20px,1.7vw,26px);line-height:1.4}
+.pmeta h3{font-size:26px}.pmeta .out{font-size:18px}.pmeta .sub{font-size:15px}
+.claim{font-size:clamp(19px,1.7vw,24px)}
+.about-text p{font-size:21px}
+.exp li{font-size:18px}
+.pill,.btn-dark,.top-cta{font-size:16px}
+.credit{font-size:14px}.clock{font-size:15px}.socials a{font-size:17px}
+/* gallery */
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}
+.shot{margin:0;display:flex;flex-direction:column;gap:12px}
+.shot.wide{grid-column:1/-1}
+.shot .ph{border-radius:28px;background:var(--surface);cursor:zoom-in}
+.shot .ph img{width:100%;height:auto;display:block;transition:transform .9s var(--ease)}
+.shot:hover .ph img{transform:scale(1.025)}
+.shot figcaption{display:flex;gap:14px;align-items:baseline;font-size:16px;color:var(--muted)}
+@media (max-width:760px){.shots{grid-template-columns:1fr}.shot .ph{border-radius:20px}}
+/* Lusion-style details: dot on pill buttons, nav text roll, "+" marks on covers */
+.btn-dark::after,.top-cta::after{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;margin-left:12px;opacity:.9;transition:transform .45s var(--spring)}
+.btn-dark:hover::after,.top-cta:hover::after{transform:scale(1.8)}
+.stage.big::before,.stage.big::after{content:"+";position:absolute;top:16px;z-index:2;font-family:var(--mono);font-size:18px;color:#00000080;pointer-events:none}
+.stage.big::before{left:20px}.stage.big::after{right:20px}
+.cs-head h1{overflow:hidden}
+.cs-head h1,.cs-head p{animation:csrise .9s var(--ease) both}.cs-head p{animation-delay:.08s}
+@keyframes csrise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.stage.big .ph img{transform:scale(var(--ps,1.06));transition:transform .2s linear;will-change:transform}
+@media (prefers-reduced-motion:reduce){.cs-head h1,.cs-head p{animation:none}}
+.stage.big{aspect-ratio:4/3}
+@media (max-width:760px){.stage.big{aspect-ratio:4/3}}
+/* v7.1 mobile header legibility */
+@media (max-width:980px){
+  .side{top:0;margin:-16px -16px 0;padding:16px 16px 14px 20px;border-radius:0 0 24px 24px;background:color-mix(in srgb,var(--bg) 94%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--rule)}
+  .side.open{background:var(--bg)}
+  .cs-nav{top:76px}
+}
+@media (max-width:980px){.cs-nav{background:var(--surface);backdrop-filter:none}}
