@@ -164,7 +164,7 @@ export const projects: Project[] = [
     team: "Flexprice product team",
     duration: "1 month, June 2026",
     tools: "Figma, React, Tailwind, shadcn/ui",
-    cover: "",
+    cover: "/images/covers/flexprice.jpg",
     problem:
       "Flexprice is billing infrastructure for software companies. Its dashboard forms were long and dense, and the subscription flow asked for everything at once.",
     constraints:
@@ -241,7 +241,7 @@ export const projects: Project[] = [
     team: "Technically Complex Product studio",
     duration: "Semester 4",
     tools: "Fusion 360, 3D printing, alcohol markers",
-    cover: "",
+    cover: "/images/covers/tcp-lamp.jpg",
     problem:
       "Light therapy lamps are technically dense products. This project started from the Beurer IL11 and asked how its form, materials and internal layout could be redesigned.",
     process: [
