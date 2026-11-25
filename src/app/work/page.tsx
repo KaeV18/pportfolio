@@ -16,9 +16,11 @@ export default function Work() {
         {projects.map((p, i) => (
           <Reveal key={p.slug}>
             <Link href={`/work/${p.slug}/`} className="launch">
-              <div className={p.cover ? "stage" : "stage empty"}>
-                <Ph src={p.cover} label="[Cover 16:9]" />
-              </div>
+              {p.cover ? (
+                <div className="stage">
+                  <Ph src={p.cover} label="" />
+                </div>
+              ) : null}
               <div className="launch-meta">
                 <div className="lm-left">
                   <span className="counter">{String(i + 1).padStart(2, "0")}</span>
