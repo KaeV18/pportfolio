@@ -206,7 +206,7 @@ export const projects: Project[] = [
       "One month, an existing codebase and component library, and a fixed palette: new designs had to use only existing Flexprice colours and match the live pages.",
     stats: [
       { value: "1", label: "month" },
-      { value: "Live", label: "Settings redesign, in the new console" },
+      { value: "Live", label: "Settings work shipped" },
     ],
     process: [
       { label: "Understand", caption: "Studied the live product and positioning against competitors." },
