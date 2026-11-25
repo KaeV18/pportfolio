@@ -49,6 +49,7 @@ export const site = {
 
 export type Step = { label: string; caption: string; img?: string };
 export type Decision = { title: string; why: string; tradeoff: string; img?: string };
+export type Shot = { src: string; caption: string; wide?: boolean };
 export type Project = {
   slug: string;
   name: string;
@@ -67,6 +68,7 @@ export type Project = {
   solution?: string;
   results?: string;
   link?: { label: string; href: string };
+  gallery?: Shot[];
 };
 
 export const projects: Project[] = [
@@ -99,11 +101,13 @@ export const projects: Project[] = [
     decisions: [
       {
         title: "Partial credit instead of right or wrong",
+        img: "/images/cases/sl-coach.jpg",
         why: "A sign has several parts. Telling a learner which finger is off lets them fix one thing at a time.",
         tradeoff: "More states to design and more feedback text to write than a simple pass or fail.",
       },
       {
         title: "Hold to confirm for half a second",
+        img: "/images/cases/sl-points.jpg",
         why: "Hand tracking flickers. Asking the learner to hold the shape for 520 ms stops accidental passes.",
         tradeoff: "Every correct sign feels slightly slower.",
       },
@@ -111,6 +115,18 @@ export const projects: Project[] = [
     solution:
       "Learners see a ghost overlay of the target hand, sign it to the camera, and get finger-level feedback with partial credit. Lessons run from single signs to short conversations.",
     link: { label: "Open the live prototype", href: "https://signlingo.khe.money" },
+    gallery: [
+      { src: "/images/cases/sl-hero.jpg", caption: "The product on laptop and phone: camera lesson with hand tracking.", wide: true },
+      { src: "/images/cases/sl-coach.jpg", caption: "Feedback that names the finger to fix." },
+      { src: "/images/cases/sl-points.jpg", caption: "Partial credit for each part of a sign, and the 520 ms hold." },
+      { src: "/images/cases/sl-never.jpg", caption: "Why it exists: most people who could sign never start." },
+      { src: "/images/cases/sl-course.jpg", caption: "Lessons that teach before they test." },
+      { src: "/images/cases/sl-langs.jpg", caption: "Ten sign languages in one app." },
+      { src: "/images/cases/sl-streaks.jpg", caption: "Streaks, gems and a league." },
+      { src: "/images/cases/sl-visual.jpg", caption: "Visual language: rounded type, colour and hand illustrations." },
+      { src: "/images/cases/sl-practice.jpg", caption: "Practice screen with live camera and the full alphabet.", wide: true },
+      { src: "/images/cases/sl-languages.jpg", caption: "Language picker.", wide: true },
+    ],
   },
   {
     slug: "ev-trip-planner",
@@ -141,11 +157,13 @@ export const projects: Project[] = [
     decisions: [
       {
         title: "A backup plan is part of every trip",
+        img: "/images/cases/ev-26.jpg",
         why: "Surveys, audits and reviews all pointed at the same failure: the plan breaks when a station is down.",
         tradeoff: "More screens and logic than a plain route planner.",
       },
       {
         title: "Show realistic range, not claimed range",
+        img: "/images/cases/ev-range.jpg",
         why: "Real range is 64–93% of the claim, so arrival battery is predicted from realistic figures.",
         tradeoff: "The numbers look worse than the carmaker’s, so the app has to explain them.",
       },
@@ -154,12 +172,29 @@ export const projects: Project[] = [
       "The app plans a long drive such as Delhi to Jaipur with predicted arrival battery, live charger status and cost, switches to a backup stop when a charger fails, works offline, and shows the plan on the lock screen.",
     results:
       "The research-to-design chain is documented: six findings, each linked to the screen it produced. The prototype has not yet been tested with real EV drivers, which is the next step.",
+    gallery: [
+      { src: "/images/cases/ev-phones.jpg", caption: "Key screens of the trip planner.", wide: true },
+      { src: "/images/cases/ev-lockscreen.jpg", caption: "Lock-screen widget and offline mode." },
+      { src: "/images/cases/ev-range.jpg", caption: "Realistic range, not claimed range." },
+      { src: "/images/cases/ev-04.jpg", caption: "Problem statement." },
+      { src: "/images/cases/ev-06.jpg", caption: "Secondary research: charger reliability and real range." },
+      { src: "/images/cases/ev-10.jpg", caption: "Competitor analysis across seven apps." },
+      { src: "/images/cases/ev-13.jpg", caption: "Primary persona." },
+      { src: "/images/cases/ev-20.jpg", caption: "User flow." },
+      { src: "/images/cases/ev-22.jpg", caption: "Selected low-fidelity wireframes." },
+      { src: "/images/cases/ev-23.jpg", caption: "Design system: palette, type and components." },
+      { src: "/images/cases/ev-24.jpg", caption: "High fidelity: plan a trip." },
+      { src: "/images/cases/ev-25.jpg", caption: "High fidelity: drive and charge." },
+      { src: "/images/cases/ev-26.jpg", caption: "High fidelity: when a station goes down." },
+      { src: "/images/cases/ev-27.jpg", caption: "High fidelity: low battery, offline and widgets." },
+      { src: "/images/cases/ev-29.jpg", caption: "Prototype flows." },
+    ],
   },
   {
     slug: "flexprice",
     name: "Flexprice",
     year: "2026",
-    claim: "Redesigned four pages of a B2B billing dashboard during a one-month apprenticeship.",
+    claim: "Settings screens for a B2B billing console, designed during a one-month product design apprenticeship.",
     role: "Product design apprentice",
     team: "Flexprice product team",
     duration: "1 month, June 2026",
@@ -170,15 +205,15 @@ export const projects: Project[] = [
     constraints:
       "One month, an existing codebase and component library, and a fixed palette: new designs had to use only existing Flexprice colours and match the live pages.",
     stats: [
-      { value: "4", label: "pages redesigned" },
       { value: "1", label: "month" },
+      { value: "Live", label: "Settings redesign, in the new console" },
     ],
     process: [
       { label: "Understand", caption: "Studied the live product and positioning against competitors." },
-      { label: "Subscription page", caption: "Rebuilt the creation flow with two-column fields, segmented controls and accordions." },
-      { label: "Add Feature", caption: "Simplified the form using the real code snippets as the base." },
-      { label: "Data Exports", caption: "Moved to a card layout matching Integrations, with a three-screen flow." },
-      { label: "Invoice", caption: "Fixed alignment with a four-column meta grid and a clear totals section." },
+      { label: "Subscription page", caption: "Exploration: rebuilt the creation flow with two-column fields, segmented controls and accordions." },
+      { label: "Add Feature", caption: "Exploration: simplified the form using the real code snippets as the base." },
+      { label: "Data Exports", caption: "Exploration: moved to a card layout matching Integrations, with a three-screen flow." },
+      { label: "Invoice", caption: "Exploration: fixed alignment with a four-column meta grid and a clear totals section." },
     ],
     decisions: [
       {
@@ -187,13 +222,18 @@ export const projects: Project[] = [
         tradeoff: "One extra step before the full form appears.",
       },
       {
-        title: "Filters in a sidebar for Data Exports",
+        title: "Filters in a sidebar for Data Exports (exploration)",
         why: "After comparing layouts, a sidebar filter next to the content scaled best as more providers are added.",
         tradeoff: "Less width for the list on small screens.",
       },
     ],
     solution:
-      "Four redesigned pages: Subscription creation, Add Feature, Data Exports (list, S3 connections, export tasks) and Invoice, built as working prototypes in the product’s own stack and palette.",
+      "The Settings redesign (Billing, Customer Portal and Customer Onboarding) is live, and some of this work was used in the new Flexprice console. I also explored Subscription creation, Add Feature, Data Exports and Invoice pages in the product’s own stack and palette.",
+    gallery: [
+      { src: "/images/cases/fx-billing.jpg", caption: "Settings, Billing: invoice configuration.", wide: true },
+      { src: "/images/cases/fx-portal.jpg", caption: "Settings, Customer Portal." },
+      { src: "/images/cases/fx-onboarding.jpg", caption: "Settings, Customer Onboarding." },
+    ],
   },
   {
     slug: "tonights-pick",
@@ -231,6 +271,12 @@ export const projects: Project[] = [
     solution:
       "A clean watchlist with posters and streaming info, and a lever you pull to get tonight’s pick as a printed ticket.",
     link: { label: "Open the live app", href: "https://tonightspick.vercel.app" },
+    gallery: [
+      { src: "/images/cases/tp-tonight.jpg", caption: "Tonight: the saved titles, ready for one pull. Demo list.", wide: true },
+      { src: "/images/cases/tp-watchlist.jpg", caption: "Watchlist with type filters, search and streaming service per title. Demo data.", wide: true },
+      { src: "/images/cases/tp-discover.jpg", caption: "Discover: suggestions matched to the titles on the list.", wide: true },
+      { src: "/images/cases/tp-add.jpg", caption: "Add a title: type a name and the poster, rating and where to watch are filled in.", wide: true },
+    ],
   },
 ];
 
