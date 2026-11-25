@@ -86,3 +86,8 @@
 
   if (root.getAttribute("data-arrive")) { setTimeout(arrive, 260); }
 })();
+
+/* v7: gentle parallax on the case-study cover (scale settles as you scroll) */
+(function(){var s=document.querySelector(".stage.big");if(!s)return;var r=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(r)return;
+function f(){var b=s.getBoundingClientRect(),t=Math.min(1,Math.max(0,-b.top/Math.max(1,b.height)));s.style.setProperty("--ps",String(1.03+.03*t));}
+window.addEventListener("scroll",f,{passive:true});f();})();
