@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Ph from "@/components/Ph";
 import NextPage from "@/components/NextPage";
-import { site, projects, stills, letterforms } from "@/content/site";
+import { site, projects, stills } from "@/content/site";
 
 const st = (i: number) => ({ "--i": i } as React.CSSProperties);
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -26,7 +26,7 @@ function Statement() {
 }
 
 export default function Home() {
-  const covers = [0, 1, 2, 3].map((i) => projects[i]);
+  const covers = projects.filter((x) => x.cover).slice(0, 4);
   return (
     <>
       <div className="bento">
@@ -47,7 +47,7 @@ export default function Home() {
           <Head title="Work" count={`${pad(projects.length)} projects`} size={30} />
           <div className="collage">
             {covers.map((p, i) => (
-              <Ph key={i} src={p?.cover} label={`[Cover ${i + 1}]`} bg={p?.cover ? undefined : i % 2 ? "var(--g1)" : undefined} />
+              <Ph key={i} src={p?.cover} label="" bg={p?.cover ? undefined : i % 2 ? "var(--g1)" : undefined} />
             ))}
           </div>
           <span className="strong">View all work <span className="arrow">→</span></span>
@@ -55,12 +55,7 @@ export default function Home() {
 
         <Link href="/stills/" className="tile t-stills rise" style={st(3)}>
           <Head title="Stills" count={stills.length ? pad(stills.length) : "[N]"} size={20} />
-          <div className="thumbs"><Ph bg="var(--g1)" /><Ph bg="var(--g2)" /></div>
-        </Link>
-
-        <Link href="/letterforms/" className="tile t-letters rise" style={st(4)}>
-          <Head title="Letterforms" count={letterforms.length ? pad(letterforms.length) : "[N]"} size={20} />
-          <div className="thumbs"><Ph bg="var(--g1)" /><Ph bg="var(--g2)" /></div>
+          <div className="thumbs"><Ph src={stills[0]} bg="var(--g1)" /><Ph src={stills[1]} bg="var(--g2)" /></div>
         </Link>
 
         <Link href="/about/" className="tile t-about rise" style={st(5)}>

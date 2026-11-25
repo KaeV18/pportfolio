@@ -122,7 +122,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .collage{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:16px;margin:28px 0}
 .collage .ph{border-radius:18px;height:100%}
 .photo-caption{position:relative;padding:14px 16px;background:var(--surface);border-radius:18px;font-size:15px;font-weight:400;line-height:1.35}
-.t-photo img.cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 30%;transition:transform 1.2s var(--ease)}
+.t-photo img.cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:96% 30%;transition:transform 1.2s var(--ease)}
 .about-big{font-size:32px;font-weight:400;line-height:1.25;letter-spacing:-.018em}
 .thumbs{display:flex;gap:10px}
 .thumbs .ph{flex:1 1 0;aspect-ratio:1/1;border-radius:10px;transition:transform .6s var(--spring)}
@@ -404,3 +404,9 @@ html.lb-lock{overflow:hidden}
   .top-cta{white-space:nowrap;padding:0 14px}
   .menu-btn{white-space:nowrap}
 }
+
+.steps-text{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px 32px}
+.steps-text .pstep{flex:none}
+.decision.noimg,.decision.flip.noimg{grid-template-columns:1fr}
+
+@media (min-width:1181px){.t-about{grid-row:4/span 2}}
