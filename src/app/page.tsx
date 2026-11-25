@@ -18,6 +18,7 @@ export default function Home() {
       <section className="hero2 rise" style={{ "--i": 0 } as React.CSSProperties}>
         <div className="hero2-text">
           <h1 className="statement"><Statement /></h1>
+          <p className="hero-lede">{site.about.short}</p>
         </div>
         <figure className="hero2-photo">
           {site.hero.photo ? <img src={site.hero.photo} alt={site.name} /> : null}
@@ -32,7 +33,7 @@ export default function Home() {
         </div>
         <div className="sel-grid">
           {list.map((p, i) => (
-            <Link key={p.slug} href={`/work/${p.slug}/`} className={`sel-item${i === 0 ? " wide" : ""} rise`} style={{ "--i": i + 1 } as React.CSSProperties}>
+            <Link key={p.slug} href={`/work/${p.slug}/`} className="sel-item rise" style={{ "--i": i + 1 } as React.CSSProperties}>
               <div className="sel-stage"><Ph src={p.cover} label="" /></div>
               <div className="sel-meta">
                 <span className="counter">{pad(i + 1)}</span>

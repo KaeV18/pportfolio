@@ -443,3 +443,28 @@ html.lb-lock{overflow:hidden}
 .nav a[aria-current="page"]::after{background:var(--accent)}
 .arrow{color:var(--accent)}
 @media (max-width:900px){.hero2{grid-template-columns:1fr;gap:32px}.hero2-photo{max-width:360px}.home{gap:64px}.sel-grid{grid-template-columns:1fr}.duo2{grid-template-columns:1fr}.sel-meta .sub{margin-left:0;flex-basis:100%}}
+
+/* ---------- v6 direction: sans only, cool ground, open sidebar, dark hero panel ---------- */
+:root{--bg:#f1f2f8;--surface:#fff;--ink:#14161d;--muted:#5b5e6b;--faint:#8c8fa0;--rule:#dfe1ec;--gray:#e5e7f2;--pill:#e5e7f2;--dark:#252836;--on-dark:#fff;--accent:#2b45ff}
+.wordmark{font:700 15px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase}
+.side{background:transparent;border-radius:0;padding:8px 8px 8px 8px}
+.btn-dark{border-radius:20px;height:40px}
+.pill{height:40px;border-radius:20px}
+.hero2{position:relative;display:flex;align-items:center;margin-top:8px;padding:56px;min-height:540px;border-radius:28px;overflow:hidden;color:#fff;background:#000 url(/images/hero.jpg) right center/cover no-repeat}
+.hero2-text{max-width:560px}
+.hero2 .statement{font-size:clamp(36px,4vw,54px);font-weight:500;line-height:1.08;letter-spacing:-.03em}
+.hero2 .statement em,.statement em{font-family:var(--sans);font-style:normal;font-weight:500;color:#7f92ff;letter-spacing:-.03em}
+.hero-lede{margin-top:22px;font-size:17px;line-height:1.55;color:#b9bccb;max-width:27em}
+.hero2-photo{position:static;background:none;border-radius:0;aspect-ratio:auto;overflow:visible}
+.hero2-photo img{display:none}
+.hero2-photo figcaption{left:56px;right:auto;bottom:40px;padding:0 16px;height:40px;display:flex;align-items:center;background:rgba(255,255,255,.96);color:var(--ink);border-radius:20px;font-size:14px;white-space:nowrap}
+.sel-item.wide .sel-stage{aspect-ratio:4/3;border-radius:22px}
+.sel-stage{border-radius:22px;background:var(--gray)}
+.sel-meta h3{font-size:24px;font-weight:500}
+.duo-tile{border-radius:24px}
+@media (max-width:900px){
+  .hero2{min-height:640px;align-items:flex-start;padding:32px 24px;border-radius:24px;background:#000 url(/images/hero.jpg) 82% bottom/auto 62% no-repeat}
+  .hero2-photo figcaption{left:16px;bottom:16px}
+  .hero2-photo{max-width:none}
+  .side{padding:12px 12px 12px 4px}
+}
