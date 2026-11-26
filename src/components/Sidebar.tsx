@@ -40,6 +40,7 @@ export default function Sidebar() {
         <div className="side-inner">
           <p className="side-intro rise" style={st(1)}>{site.role}</p>
           <div className="divider" />
+          <p className="side-label">Sections</p>
           <nav className="nav" aria-label="Sections">
             <ul>
               {site.nav.map((n, i) => (
