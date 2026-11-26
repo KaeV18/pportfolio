@@ -194,41 +194,25 @@ export const projects: Project[] = [
     slug: "flexprice",
     name: "Flexprice",
     year: "2026",
-    claim: "Settings screens for a B2B billing console, designed during a one-month product design apprenticeship.",
+    claim: "Settings screens for a B2B billing console, designed during a product design apprenticeship.",
     role: "Product design apprentice",
-    team: "Flexprice product team",
-    duration: "1 month, June 2026",
-    tools: "Figma, React, Tailwind, shadcn/ui",
+    team: "",
+    duration: "June 2026",
+    tools: "",
     cover: "/images/covers/flexprice.jpg",
     problem:
-      "Flexprice is billing infrastructure for software companies. Its dashboard forms were long and dense, and the subscription flow asked for everything at once.",
-    constraints:
-      "One month, an existing codebase and component library, and a fixed palette: new designs had to use only existing Flexprice colours and match the live pages.",
+      "Flexprice is billing infrastructure for software companies. This work covers the Settings area of its dashboard, plus further screens I explored.",
     stats: [
-      { value: "1", label: "month" },
       { value: "Live", label: "Settings work shipped" },
     ],
     process: [
-      { label: "Understand", caption: "Studied the live product and positioning against competitors." },
-      { label: "Subscription page", caption: "Exploration: rebuilt the creation flow with two-column fields, segmented controls and accordions." },
-      { label: "Add Feature", caption: "Exploration: simplified the form using the real code snippets as the base." },
-      { label: "Data Exports", caption: "Exploration: moved to a card layout matching Integrations, with a three-screen flow." },
-      { label: "Invoice", caption: "Exploration: fixed alignment with a four-column meta grid and a clear totals section." },
-    ],
-    decisions: [
-      {
-        title: "Show only the Plan field first",
-        why: "Hiding too much at the start felt confusing in review. Showing just Plan, then revealing the rest, kept the page calm without losing context.",
-        tradeoff: "One extra step before the full form appears.",
-      },
-      {
-        title: "Filters in a sidebar for Data Exports (exploration)",
-        why: "After comparing layouts, a sidebar filter next to the content scaled best as more providers are added.",
-        tradeoff: "Less width for the list on small screens.",
-      },
+      { label: "Subscription page", caption: "Exploration: two-column fields, segmented controls and accordions in the creation flow." },
+      { label: "Add Feature", caption: "Exploration: a simplified Add Feature form." },
+      { label: "Data Exports", caption: "Exploration: a card layout with a three-screen flow." },
+      { label: "Invoice", caption: "Exploration: a four-column meta grid and a clear totals section." },
     ],
     solution:
-      "The Settings redesign (Billing, Customer Portal and Customer Onboarding) is live, and some of this work was used in the new Flexprice console. I also explored Subscription creation, Add Feature, Data Exports and Invoice pages in the product’s own stack and palette.",
+      "The Settings redesign (Billing, Customer Portal and Customer Onboarding) is live, and some of this work was used in the new Flexprice console. I also explored Subscription creation, Add Feature, Data Exports and Invoice pages.",
     gallery: [
       { src: "/images/cases/fx-billing.jpg", caption: "Settings, Billing: invoice configuration.", wide: true },
       { src: "/images/cases/fx-portal.jpg", caption: "Settings, Customer Portal." },
