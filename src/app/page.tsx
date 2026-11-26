@@ -17,8 +17,9 @@ export default function Home() {
     <div className="home">
       <section className="hero2 rise" style={{ "--i": 0 } as React.CSSProperties}>
         <div className="hero2-text">
+          <p className="hero-eyebrow">UX/UI · HCI · Product design</p>
           <h1 className="statement"><Statement /></h1>
-          <p className="hero-lede">{site.about.short}</p>
+          <p className="hero-lede">{site.about.short.split(". ")[0]}.</p>
         </div>
         <figure className="hero2-photo">
           {site.hero.photo ? <img src={site.hero.photo} alt={site.name} /> : null}
@@ -26,7 +27,7 @@ export default function Home() {
         </figure>
       </section>
 
-      <section className="selected">
+      <section className="selected" id="work">
         <div className="sel-head">
           <h2>Selected work</h2>
           <Link href="/work/" className="sel-all">All work <span className="arrow">→</span></Link>
