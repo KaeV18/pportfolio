@@ -53,7 +53,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         </div>
       ) : null}
       <div className="meta-grid">
-        {[["Role", p.role], ["Team", p.team], ["Timeline", p.duration], ["Tools", p.tools]].map(([l, v]) => (
+        {[["Role", p.role], ["Team", p.team], ["Timeline", p.duration], ["Tools", p.tools]].filter(([, v]) => v).map(([l, v]) => (
           <div key={l}><p className="eyebrow">{l}</p><p>{v}</p></div>
         ))}
       </div>
